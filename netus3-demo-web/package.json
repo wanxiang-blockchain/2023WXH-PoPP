@@ -1,0 +1,92 @@
+{
+  "name": "react-nextjs-demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build:test": "cross-env NODE_ENV=test next build",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "prepare": "husky install"
+  },
+  "engines": {
+    "node": ">=16.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json,ts,tsx}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ],
+    "*.{js,jsx,ts,tsx}": "eslint --fix"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.395.0",
+    "@aws-sdk/lib-storage": "^3.395.0",
+    "@aws-sdk/signature-v4-crt": "^3.391.0",
+    "@formatjs/intl-localematcher": "^0.2.32",
+    "@nextui-org/react": "^2.1.10",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@types/mockjs": "^1.0.7",
+    "@types/node": "20.4.6",
+    "@types/react": "18.2.18",
+    "@types/react-dom": "18.2.7",
+    "@web3-react/core": "^8.2.0",
+    "@web3-react/metamask": "^8.2.1",
+    "@web3-react/network": "^8.2.0",
+    "@web3-react/walletconnect-v2": "^8.3.7",
+    "ahooks": "^3.7.8",
+    "animate.css": "^4.1.1",
+    "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
+    "bignumber.js": "^9.1.1",
+    "bufferutil": "4.0.7",
+    "cross-env": "^7.0.3",
+    "dexie": "^3.2.4",
+    "dexie-react-hooks": "^1.1.6",
+    "encoding": "^0.1.13",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
+    "framer-motion": "^10.16.4",
+    "html2canvas": "^1.4.1",
+    "husky": "^8.0.3",
+    "i18next": "^23.4.2",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "lint-staged": "^13.2.2",
+    "lokijs": "1.x",
+    "mockjs": "^1.1.0",
+    "moment": "^2.29.4",
+    "negotiator": "^0.6.3",
+    "next": "13.4.12",
+    "pino-pretty": "^10.2.0",
+    "postcss": "8.4.27",
+    "prettier": "^3.0.1",
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "qrcode.react": "^3.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-i18next": "^13.0.3",
+    "react-redux": "^8.1.2",
+    "react-select": "^5.7.4",
+    "server-only": "^0.0.1",
+    "styled-components": "6.0.7",
+    "supports-color": "8.1.1",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.1.6",
+    "utf-8-validate": "5.0.10",
+    "web3": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/negotiator": "^0.6.1",
+    "eslint-config-prettier": "^8.10.0"
+  }
+}

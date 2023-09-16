@@ -1,0 +1,250 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "poppHubAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "planetProfile",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "planetId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "baseId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			}
+		],
+		"name": "CreatedBase",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "PLANET_PROFILE",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "POPP_HUB",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "baseId",
+				"type": "uint256"
+			}
+		],
+		"name": "authCheck",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "baseId",
+				"type": "uint256"
+			}
+		],
+		"name": "baseInfo",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "planetProfileId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "imageURI",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "joinNft",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "postNft",
+						"type": "address"
+					}
+				],
+				"internalType": "struct DataTypes.BaseInfo",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "countBaseOfPlanet",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "planetProfileId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "imageURI",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "joinNft",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "postNft",
+						"type": "address"
+					}
+				],
+				"internalType": "struct DataTypes.BaseInfo",
+				"name": "vars",
+				"type": "tuple"
+			}
+		],
+		"name": "createPlanetBase",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "planetProfileId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "baseId",
+				"type": "uint256"
+			}
+		],
+		"name": "removePlanetBase",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "baseId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "joinNft",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "postNft",
+				"type": "address"
+			}
+		],
+		"name": "setAuth",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

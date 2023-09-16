@@ -1,0 +1,658 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "periodEndTime",
+				"type": "uint256"
+			}
+		],
+		"name": "NewPeriod",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "blockTime",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "periodEndTime",
+				"type": "uint256"
+			}
+		],
+		"name": "Zan",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "BPS_MAX",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "HUB",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "addressZanCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "addressZanCountHistory",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "benefitsAvailableRecord",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "donateBenefit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "collectBenefit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "zanTotalCount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "collectNtfTotalSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "collectHoldNtfAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "collectHoldNtfTotalSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "donateHoldNtfTotalSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "donateHoldNtfAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "periodEndTime",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct FinancePoolNFTModule.Benefit",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "benefitsHistory",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "benefitsOfThisPeriodRecord",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "donateBenefit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "collectBenefit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "zanTotalCount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "collectNtfTotalSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "collectHoldNtfAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "collectHoldNtfTotalSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "donateHoldNtfTotalSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "donateHoldNtfAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "periodEndTime",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct FinancePoolNFTModule.Benefit",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "calcReward",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "calcRewardSplit",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "collect",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "referral",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "donate",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "claimedRecord",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "collectProfitPoint",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "point",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "zanPoint",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "collectPoint",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "profitNftAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "profitNftPoint",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "depositERC20ByCollect",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "depositERC20ByDonor",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "referAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "depositERC20ByReferral",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "donateProfitPoint",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "point",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "zanPoint",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "collectPoint",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "profitNftAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "profitNftPoint",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "erc20Address",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "feeCollectModule",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getReward",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "hub",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "feeCollectModuleAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "poppProfileId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "publicationId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "erc20TokenAddress",
+				"type": "address"
+			}
+		],
+		"name": "init",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "period",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "periodEndTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "profileId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "pubId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "referralBenefit",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "referralBenefitHistory",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "point",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "zanPoint",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "collectPoint",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "nftAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "profitNftPoint",
+				"type": "uint256"
+			}
+		],
+		"name": "setCollectProfitPoint",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "point",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "zanPoint",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "collectPoint",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "nftAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "profitNftPoint",
+				"type": "uint256"
+			}
+		],
+		"name": "setDonateProfitPoint",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "zan",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

@@ -1,0 +1,176 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_poppHubAddress",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "profileId",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "tokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint8",
+						"name": "tokenType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minAmount",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct IAuthModule.AuthData",
+				"name": "data",
+				"type": "tuple"
+			}
+		],
+		"name": "SetAuth",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "auth",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "tokenAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint8",
+				"name": "tokenType",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint256",
+				"name": "minAmount",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "authHubAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "profileId",
+				"type": "uint256"
+			}
+		],
+		"name": "checkAuth",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "profileId",
+				"type": "uint256"
+			}
+		],
+		"name": "deleteAuth",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "poppHubAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "profileId",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "tokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint8",
+						"name": "tokenType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minAmount",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct IAuthModule.AuthData",
+				"name": "data",
+				"type": "tuple"
+			}
+		],
+		"name": "setAuth",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

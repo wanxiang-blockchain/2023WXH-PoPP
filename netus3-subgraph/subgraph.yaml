@@ -1,0 +1,70 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: HubEvents
+    network: matic
+    source:
+      address: "0x04bb645d87baa75DADDc9B71aFE870CE3c863861"
+      abi: HubEvents
+      startBlock: 47602001
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ProfileCreated
+      abis:
+        - name: HubEvents
+          file: ./abis/HubEvents.json
+      eventHandlers:
+        - event: ProfileCreated(indexed uint256,indexed address,indexed address,string,string,address,bytes,string,uint256,uint8)
+          handler: handleProfileCreated
+      file: ./src/hub.ts
+  - kind: ethereum
+    name: HubEvents1
+    network: matic
+    source:
+      address: "0xF56D5ed0D91d3419D4B90fb2EbeC51aa67429DD6"
+      abi: HubEvents1
+      startBlock: 47602017
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Followed1
+        - PostCreated
+        - MirrorCreated
+      abis:
+        - name: HubEvents1
+          file: ./abis/HubEvents1.json
+      eventHandlers:
+        - event: Followed1(indexed address,uint256,bytes,uint256)
+          handler: handleFollowed1
+        - event: PostCreated(indexed uint256,indexed uint256,indexed uint256,uint256,string,address,bytes,address,bytes,uint256)
+          handler: handlePostCreated
+        - event:  MirrorCreated(indexed uint256,indexed uint256,uint256,uint256,bytes,address,bytes,uint256)
+          handler: handleMirrorCreated
+      file: ./src/hubone.ts
+  - kind: ethereum
+    name: PlanetBase
+    network: matic
+    source:
+      address: "0xB7fb7B8a34EB58A17e375699886F11812aC67E3B"
+      abi: PlanetBase
+      startBlock: 47602011
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - CreatedBase
+      abis:
+        - name: PlanetBase
+          file: ./abis/PlanetBase.json
+      eventHandlers:
+        - event: CreatedBase(uint256,uint256,string)
+          handler: handleCreatedBase
+      file: ./src/planebase.ts

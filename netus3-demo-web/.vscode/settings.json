@@ -1,0 +1,20 @@
+{
+	"files.exclude": {
+		"package.json": true,
+		"postcss.config.js": true,
+		"README.md": true,
+		"tsconfig.json": true,
+		"next.config.js": true,
+		"next-env.d.ts": true,
+		".prettierrc": true,
+		".prettierignore": true,
+		".gitignore": true,
+		".eslintrc.json": true,
+		"next-test": true,
+		"node_modules": true,
+		"tailwind.config.ts": true,
+		"yarn.lock": true,
+		"prettier.config.js": true
+	},
+	"workspace.isHidden": true
+}

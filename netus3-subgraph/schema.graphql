@@ -1,0 +1,49 @@
+# Create Profile list
+type ProfileCreateInfo @entity {
+  id: ID! #profileId
+  profileId: BigInt! #profileId
+  to: Bytes! # recipient address
+  creator: Bytes! # Publisher's address
+  followModule: Bytes! 
+  followModuleReturnData: Bytes!
+  followNFTURI: String! # nft uri
+  handle: String! # handle
+  imageURI: String! # image uri
+  profileType: String! # type 0 popp 1 planet 2 base
+  timestamp: BigInt!
+  crateAt: BigInt!
+  planetId: BigInt! # 2 base Associated Planet id
+  baseName: String! 
+}
+
+# Follow list
+type FollowInfo @entity {
+  id: ID! 
+  followModuleData: Bytes! #The id of the current user, in 64-bit hexadecimal.
+  profileId: BigInt! #profileId
+  follower: Bytes! # user address
+  timestamp: BigInt!
+  crateAt: BigInt!
+  isProhibitionAddress: Boolean! #gagged
+  isProhibitionProfileId: Boolean! #Banned ProfileId Status
+  isKickOut: Boolean! #Kicked off planet status
+}
+
+# Content List
+type ContentInfo @entity {
+  id: ID!
+  baseProfileId: BigInt!
+  collectModule: Bytes!
+  collectModuleReturnData: Bytes!
+  contentURI: String!
+  planetProfileId: BigInt!
+  profileId: BigInt!
+  pubId: BigInt!
+  referenceModule: Bytes!
+  referenceModuleReturnData: Bytes!
+  timestamp: BigInt!
+  crateAt: BigInt!
+  profileIdPointed: BigInt!
+  pubIdPointed: BigInt!
+  type: String! # type post | mirror
+}
